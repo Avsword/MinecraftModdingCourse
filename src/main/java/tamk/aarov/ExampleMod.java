@@ -54,6 +54,11 @@ public class ExampleMod implements ModInitializer {
 
 	public static final EntityModelLayer MODEL_CAPYBARA_LAYER = new EntityModelLayer(new Identifier("ooyo", "capybara"), "main");
 
+
+	// Capybara tiputtaa uuden esineen
+	public static final Item orange = new Item(new FabricItemSettings());
+
+
 	@Override
 	public void onInitialize() {
 		// Rekisteröi Cabostaff
@@ -75,8 +80,7 @@ public class ExampleMod implements ModInitializer {
 		// Rekisteröi opaali item
 		Registry.register(Registries.ITEM, new Identifier("ooyo", "opal_item"), opal_item);
 
-
-		// Lisää capybaralle attribuutit.. Tähän meni AIDOSTI 5 TUNTIA AIKAA.
+		// Lisää capybaralle attribuutit.
 		FabricDefaultAttributeRegistry.register(CAPY, CapybaraEntity.createMobAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2D).add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0D).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.0D));
 
 		// Rekisteröi capybara renderöijä
@@ -85,5 +89,14 @@ public class ExampleMod implements ModInitializer {
         });
  
         EntityModelLayerRegistry.registerModelLayer(MODEL_CAPYBARA_LAYER, Capybara_model::getTexturedModelData);
+
+		/* BiomeModifications.addSpawn(BiomeSelectors.all(), SpawnGroup.CREATURE, CAPY, 70, 1, 200); */
+		BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.MONSTER, CAPY, 90, 1, 3);
+		
+		// Rekisteröi orange item
+		Registry.register(Registries.ITEM, new Identifier("ooyo", "orange"), orange);
+
+
 	}
+
 }

@@ -9,16 +9,11 @@ public class CapybaraEntityRenderer extends MobEntityRenderer<CapybaraEntity, Ca
 
     public CapybaraEntityRenderer(Context context, Capybara_model entityModel, float f) {
         super(context, entityModel, f);
-
     }
 
-       @Override
+    @Override
     public Identifier getTexture(CapybaraEntity entity) {
         return new Identifier("ooyo", "textures/entity/capydarkened.png");
     }
-    
-
-
-
 
 }

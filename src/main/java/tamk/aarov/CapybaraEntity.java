@@ -10,6 +10,9 @@ import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.passive.ChickenEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
 
@@ -25,4 +28,12 @@ public class CapybaraEntity extends HostileEntity {
       this.targetSelector.add(2, new ActiveTargetGoal<>(this, ChickenEntity.class, true));
     }
     
+    @Override
+    public void onDeath(net.minecraft.entity.damage.DamageSource cause) {
+        super.onDeath(cause);
+        
+        // Tiputa appelsiini
+        ItemStack opalItemStack = new ItemStack(Registries.ITEM.get(new Identifier("ooyo", "orange")));
+        this.dropStack(opalItemStack);
+    }
 }

@@ -1,0 +1,22 @@
+{
+  "credit": "Made with Blockbench",
+  "texture_size": [64, 64],
+  "textures": {
+    "0": "ooyo:item/orangetexture",
+    "particle": "ooyo:item/orangetexture"
+  },
+  "elements": [
+    {
+      "from": [7, 6, 7],
+      "to": [11, 10, 11],
+      "faces": {
+        "north": { "uv": [0, 0, 2, 2], "texture": "#0" },
+        "east": { "uv": [0, 2, 2, 4], "texture": "#0" },
+        "south": { "uv": [2, 0, 4, 2], "texture": "#0" },
+        "west": { "uv": [2, 2, 4, 4], "texture": "#0" },
+        "up": { "uv": [2, 6, 0, 4], "texture": "#0" },
+        "down": { "uv": [6, 0, 4, 2], "texture": "#0" }
+      }
+    }
+  ]
+}

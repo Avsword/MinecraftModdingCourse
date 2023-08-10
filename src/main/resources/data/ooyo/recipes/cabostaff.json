@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["WWW", "OFO", "PPP"],
+  "key": {
+    "W": {
+      "item": "ooyo:orange"
+    },
+    "O": {
+      "item": "ooyo:opal_item"
+    },
+    "F": {
+      "item": "minecraft:feather"
+    },
+    "P": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "ooyo:cabostaff",
+    "count": 1
+  }
+}
